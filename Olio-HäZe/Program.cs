@@ -15,6 +15,7 @@ namespace OOdemot
             TestaaKiuas();
             TestaaPesukone();
             TestaaTelevisio();
+            testaaVechile();
         }
         //Tehtävän1 Kiuas-Luokan testaus
         static void TestaaKiuas()
@@ -73,6 +74,25 @@ namespace OOdemot
             Console.WriteLine("...ja ilma ääniä {0}", televisio.Mykistys);
             Console.WriteLine();
 
+        }
+        static void testaaVechile()
+        {   
+            //Yx Mosse vetää jonoa
+            Vechile vechile = new JAMK.IT.Vechile();
+            vechile.Name = "Mosse";
+            vechile.Speed = 60;
+            vechile.Tyres = false;
+            //Katotaan sielun sivuikkunasta miltä se näyttää
+            Console.WriteLine("Auton nimi on: {0}." , vechile.Name);
+            Console.WriteLine("Vauhtia sillä on {0}", vechile.Speed);
+            Console.WriteLine("mikä on aika hyvin autolle jonka rengas tilanne on: {0}", vechile.Tyres);
+            vechile.Name = "Boeing AH-64 Apache";
+            vechile.Speed = 293;
+            vechile.Tyres = true;
+            Console.WriteLine("WÄPWÄPWÄPWÄPWÄPWÄP täyttyy ilma saatanallisella mekkalla!");
+            Console.WriteLine("Mitä helvettiä ohi kiitää {0}.", vechile.Name);
+            Console.WriteLine("Se on täydessä {0} km/t vauhdissaan menossa levittämään demokratia ilosanomaa", vechile.Speed);
+            Console.WriteLine("rengas tilanne sillä on: {0}, mutta alas tulon merkkejä ei näy", vechile.Tyres);
         }
     }
 }

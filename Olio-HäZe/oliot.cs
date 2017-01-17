@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
-    public class Televisio
+    public class Vechile
+    {
+        public string Name { get; set; }
+        public int Speed { get; set; }
+        public bool Tyres { get; set; }
+    }
+        public class Televisio
     {
         public bool OnkoPäällä { get; set; }
         public bool Hdmi { get; set; }
@@ -42,6 +48,7 @@ namespace JAMK.IT
                     kosteus = 0;
                 }
             }
+
         }
     }
 }
