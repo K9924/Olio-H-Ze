@@ -6,49 +6,51 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
-    public class Vechile
+
+    class Radio
     {
-        public string Name { get; set; }
-        public int Speed { get; set; }
-        public bool Tyres { get; set; }
-    }
-        public class Televisio
-    {
-        public bool OnkoPäällä { get; set; }
-        public bool Hdmi { get; set; }
-        public bool Antenni { get; set; }
-        public int ÄänenVoimakkuus { get; set; }
-        public bool Mykistys { get; set; }
-    }
-    public class Pesukone
-    {
-        public bool OnkoPäällä { get; set; }
-        public bool VedenSaanti { get; set; }
-        public float PyörimisNopeus { get; set; }
-        public float KäyntiAika { get; set; }
-        public float Lämpötila { get; set; }
-    }
-    public class Kiuas
-    {
-        public bool OnkoPäällä { get; set; } //"prop"+tab+tab
-        public float Lämpötila { get; set; }
-        //kosteus voi olla välilllä 0-100
-        float kosteus;
-        public float Kosteus
+        private float kanava = 0;
+        private int vola = 0;
+
+       
+        // alustetaan kanava stringi
+        public float Kanava
         {
             get
             {
-                return kosteus;
+                return kanava;
             }
             set
             {
-                kosteus = value;
-                if (kosteus < 0 || kosteus > 100)
+                kanava = value;
+                if(kanava < 2000.0 || kanava > 26000.0)
                 {
-                    kosteus = 0;
+                    kanava = 2000;
                 }
             }
+        }
 
+        // alustetaan inti vola
+        public int Vola
+        {
+            get
+            {
+                return vola;
+            }
+
+            set
+            {
+                vola = value;
+                if(vola < 1 || vola > 9)
+                {
+                    vola = 1;
+                }
+            }
+        }
+
+        public override string ToString()
+        {
+            return "kanava = " + Kanava + ", Vola = " + vola;
         }
     }
 }
